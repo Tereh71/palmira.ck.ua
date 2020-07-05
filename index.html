@@ -1,321 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#пальміразош</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>#пальміразош</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <header class="header">
-    <div class="header__left-block">
-      <div class="header__logo">
-        <img src="icons/logo.svg" alt="Логотип" />
+  <body>
+    <header class="header">
+      <div class="header__left-block">
+        <div class="header__logo">
+          <img src="icons/logo.svg" alt="Логотип" />
+        </div>
+        <nav class="header__links">
+          <a href="documents.html" class="header__link">Документи</a>
+          <a href="timetable.html" class="header__link">Розклад</a>
+          <a href="hobby.html" class="header__link">Гурткова робота</a>
+          <a href="projects.html" class="header__link">Проектна діяльність</a>
+        </nav>
       </div>
-      <nav class="header__links">
-        <a href="documents.html" class="header__link">Документи</a>
-        <a href="timetable.html" class="header__link">Розклад</a>
-        <a href="hobby.html" class="header__link">Гурткова робота</a>
-        <a href="projects.html" class="header__link">Проектна діяльність</a>
-      </nav>
+      <div class="header__right-block">
+        <button data-modal class="btn btn_white">Зв'язок з нами</button>
+      </div>
+    </header>
+    <div class="sidepanel">
+      <div class="sidepanel__text"><span>Соціальні мережі</span></div>
+      <div class="sidepanel__divider"></div>
+      <a
+        href="https://www.instagram.com/palmira_school/"
+        class="sidepanel__icon"
+      >
+        <img src="icons/instagram.svg" alt="instagram" />
+      </a>
+      <a href="https://www.facebook.com/palmiraschool/" class="sidepanel__icon">
+        <img src="icons/facebook.svg" alt="facebook" />
+      </a>
     </div>
-    <div class="header__right-block">
-      <button data-modal class="btn btn_white">Зв'язок з нами</button>
-    </div>
-  </header>
-  <div class="sidepanel">
-    <div class="sidepanel__text"><span>Соціальні мережі</span></div>
-    <div class="sidepanel__divider"></div>
-    <a href="https://www.instagram.com/palmira_school/" class="sidepanel__icon">
-      <img src="icons/instagram.svg" alt="instagram" />
-    </a>
-    <a href="https://www.facebook.com/palmiraschool/" class="sidepanel__icon">
-      <img src="icons/facebook.svg" alt="facebook" />
-    </a>
-  </div>
 
-  <div class="preview">
-    <div class="bgc_blue"></div>
-    <div class="container">
-      <h2 class="title">Пальмірська ЗОШ І-ІІІ ступенів</h2>
-      <br />
-      <div class="tabcontainer">
-        <div class="tabcontent">
-          <img src="img/tabs/document.jpg" alt="vegy" />
-          <div class="tabcontent__descr">
-            Інформація про документи закладу. <br />Меню "Фитнес" - это новый
-            подход к приготовлению блюд: больше свежих овощей и фруктов. Для
-            людей, которые интересуются спортом; активных и здоровых. Это
-            абсолютно новый продукт с оптимальной ценой и высоким качеством!
-          </div>
-        </div>
-        <div class="tabcontent">
-          <img src="img/tabs/rozklad.jpg" alt="elite" />
-          <div class="tabcontent__descr">
-            Розклади уроків та дзвінків. <br />Меню “Премиум” - мы используем
-            не только красивый дизайн упаковки, но и качественное исполнение
-            блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без
-            похода в ресторан!
-          </div>
-        </div>
-        <div class="tabcontent">
-          <img src="img/tabs/gurtky.jpg" alt="post" />
-          <div class="tabcontent__descr">
-            Розклад роботи гуртків.<br />Наше специальное “Постное меню” - это
-            тщательный подбор ингредиентов: полное отсутствие продуктов
-            животного происхождения. Полная гармония с собой и природой в
-            каждом элементе! Все будет Ом!
-          </div>
-        </div>
-        <div class="tabcontent">
-          <img src="img/tabs/plany.jpg" alt="vegy" />
-          <div class="tabcontent__descr">
-            Проектна діяльність.<br />
-            Меню "Сбалансированное" - это соответствие вашего рациона всем
-            научным рекомендациям. Мы тщательно просчитываем вашу потребность
-            в к/б/ж/у и создаем лучшие блюда для вас.
-          </div>
-        </div>
-        <div class="tabheader">
-          <h3>Що вас цікавить?</h3>
-          <div class="tabheader__items">
-            <div class="tabheader__item tabheader__item_active">
-              Документи
+    <div class="preview">
+      <div class="bgc_blue"></div>
+      <div class="container">
+        <h2 class="title">Пальмірська ЗОШ І-ІІІ ступенів</h2>
+        <br />
+        <div class="tabcontainer">
+          <div class="tabcontent">
+            <img src="img/tabs/document.jpg" alt="vegy" />
+            <div class="tabcontent__descr">
+              Інформація про документи закладу. <br />Меню "Фитнес" - это новый
+              подход к приготовлению блюд: больше свежих овощей и фруктов. Для
+              людей, которые интересуются спортом; активных и здоровых. Это
+              абсолютно новый продукт с оптимальной ценой и высоким качеством!
             </div>
-            <div class="tabheader__item">Розклад</div>
-            <div class="tabheader__item">Гуртки</div>
-            <div class="tabheader__item">Проектна діяльність</div>
-            <div class="tabheader__item">Події</div>
+          </div>
+          <div class="tabcontent">
+            <img src="img/tabs/rozklad.jpg" alt="elite" />
+            <div class="tabcontent__descr">
+              Розклади уроків та дзвінків. <br />Меню “Премиум” - мы используем
+              не только красивый дизайн упаковки, но и качественное исполнение
+              блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без
+              похода в ресторан!
+            </div>
+          </div>
+          <div class="tabcontent">
+            <img src="img/tabs/gurtky.jpg" alt="post" />
+            <div class="tabcontent__descr">
+              Розклад роботи гуртків.<br />Наше специальное “Постное меню” - это
+              тщательный подбор ингредиентов: полное отсутствие продуктов
+              животного происхождения. Полная гармония с собой и природой в
+              каждом элементе! Все будет Ом!
+            </div>
+          </div>
+          <div class="tabcontent">
+            <img src="img/tabs/plany.jpg" alt="vegy" />
+            <div class="tabcontent__descr">
+              Проектна діяльність.<br />
+              Меню "Сбалансированное" - это соответствие вашего рациона всем
+              научным рекомендациям. Мы тщательно просчитываем вашу потребность
+              в к/б/ж/у и создаем лучшие блюда для вас.
+            </div>
+          </div>
+          <div class="tabheader">
+            <h3>Що вас цікавить?</h3>
+            <div class="tabheader__items">
+              <div class="tabheader__item tabheader__item_active">
+                Документи
+              </div>
+              <div class="tabheader__item">Розклад</div>
+              <div class="tabheader__item">Гуртки</div>
+              <div class="tabheader__item">Проектна діяльність</div>
+              <div class="tabheader__item">Події</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="preview__life">Ми робимо кращим майбутнє!</div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="offer">
-    <div class="bgc_y"></div>
-    <div class="container">
-      <div class="offer__text">
-        <h2 class="title">Що ми можемо Вам запропонувати?</h2>
-        <div class="offer__descr">
-          Наша мета - навчити ваших дітей самостійно здобувати знання. В
-          умовах сьогодення саме це вміння дасть їм можливість завжди бути
-          затребуваними та отримувати від своєї майбутньгї роботи не тільки
-          задоволення, а й достойну заробітну плату.
-        </div>
-      </div>
-      <div class="offer__action">
-        <button data-modal class="btn btn_dark">Зв'язок з нами</button>
+        <div class="preview__life">Ми робимо кращим майбутнє!</div>
       </div>
     </div>
-    <div class="container">
-      <div class="offer__advantages">
-        <h2>Быстро и полезно</h2>
-        <div class="offer__advantages-text">
-          Готовка дома занимает много сил, времени и нервов. Мы привозим еду
-          сразу на целый день, и ты можешь действовать так, как тебе удобно,
-          не подстраиваясь ни под кого и будучи уверенным в качестве продукта!
+
+    <div class="divider"></div>
+
+    <div class="offer">
+      <div class="bgc_y"></div>
+      <div class="container">
+        <div class="offer__text">
+          <h2 class="title">Що ми можемо Вам запропонувати?</h2>
+          <div class="offer__descr">
+            Наша мета - навчити ваших дітей самостійно здобувати знання. В
+            умовах сьогодення саме це вміння дасть їм можливість завжди бути
+            затребуваними та отримувати від своєї майбутньгї роботи не тільки
+            задоволення, а й достойну заробітну плату.
+          </div>
         </div>
-        <h2>Правильный рацион</h2>
-        <div class="offer__advantages-text">
-          Мы разработали специальное меню, где учтены все нюансы правильного
-          питания, от баланса БЖУ до их приготовления и дробления рациона.
+        <div class="offer__action">
+          <button data-modal class="btn btn_dark">Зв'язок з нами</button>
         </div>
       </div>
-      <div class="offer__slider">
-        <div class="offer__slider-counter">
-          <div class="offer__slider-prev">
-            <img src="icons/left.svg" alt="prev" />
+      <div class="container">
+        <div class="offer__advantages">
+          <h2>Быстро и полезно</h2>
+          <div class="offer__advantages-text">
+            Готовка дома занимает много сил, времени и нервов. Мы привозим еду
+            сразу на целый день, и ты можешь действовать так, как тебе удобно,
+            не подстраиваясь ни под кого и будучи уверенным в качестве продукта!
           </div>
-          <span id="current">03</span>
-          /
-          <span id="total">04</span>
-          <div class="offer__slider-next">
-            <img src="icons/right.svg" alt="next" />
-          </div>
-        </div>
-        <div class="offer__slider-wrapper">
-          <div class="offer__slider-inner">
-            <div class="offer__slide">
-              <img src="img/slider/duhovyi.jpg" alt="Духовий" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/lego (2).jpg" alt="Лего" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/lego (3).jpg" alt="Лего" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/lego (4).jpg" alt="Лего" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/lego.jpg" alt="Лего" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/tanci.jpg" alt="Танцювальний" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/biser1.jpg" alt="Бісер" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/biser.jpg" alt="Бісер" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/nush.jpg" alt="НУШ" />
-            </div>
-            <div class="offer__slide">
-              <img src="img/slider/rozumnyky.jpg" alt="Розумники" />
-            </div>
+          <h2>Правильный рацион</h2>
+          <div class="offer__advantages-text">
+            Мы разработали специальное меню, где учтены все нюансы правильного
+            питания, от баланса БЖУ до их приготовления и дробления рациона.
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="calculating">
-    <div class="container">
-      <h2 class="title">Рассчитаем вашу потребность в калориях?</h2>
-      <div class="calculating__field">
-        <div class="calculating__subtitle">
-          Ваш пол
-        </div>
-        <div class="calculating__choose" id="gender">
-          <div id="female" class="calculating__choose-item calculating__choose-item_active">Женщина</div>
-          <div id="male" class="calculating__choose-item">Мужчина</div>
-        </div>
-
-        <div class="calculating__subtitle">Ваша конституция</div>
-        <div class="calculating__choose calculating__choose_medium">
-          <input type="text" id="height" placeholder="Введите рост" class="calculating__choose-item" />
-          <input type="text" id="weight" placeholder="Введите вес" class="calculating__choose-item" />
-          <input type="text" id="age" placeholder="Введите возраст" class="calculating__choose-item" />
-        </div>
-
-        <div class="calculating__subtitle">
-          Выберите вашу физическая активность
-        </div>
-        <div class="calculating__choose calculating__choose_big">
-          <div data-ratio="1.2" id="low" class="calculating__choose-item">Низкая активность</div>
-          <div data-ratio="1.375" id="small" class="calculating__choose-item calculating__choose-item_active">Невысокая
-            активность</div>
-          <div data-ratio="1.55" id="medium" class="calculating__choose-item">Умеренная активность</div>
-          <div data-ratio="1.725" id="high" class="calculating__choose-item">Высокая активность</div>
-        </div>
-
-        <div class="calculating__divider"></div>
-
-        <div class="calculating__total">
-          <div class="calculating__subtitle">Ваша суточная норма калорий:</div>
-          <div class="calculating__result"><span>2700</span> ккал</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="menu">
-    <h2 class="title">В школі працюють гуртки</h2>
-
-    <div class="menu__field">
-      <div class="container"></div>
-    </div>
-  </div>
-
-  <div class="order">
-    <div class="container">
-      <div class="title">Чекаємо на Вас прямо зараз!</div>
-      <form action="#" class="order__form">
-        <input required placeholder="Ваше ім 'я" name="name" type="text" class="order__input" />
-        <input required placeholder="Ваш номер телефону" name="phone" type="phone" class="order__input" />
-        <img src="icons/right.svg" alt="right" />
-        <button class="btn btn_dark btn_min">Зателефонуйте мені</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="promotion">
-    <div class="bgc_y"></div>
-    <div class="container">
-      <div class="promotion__text">
-        <div class="title">Акция для новых клиентов!</div>
-        <div class="promotion__descr">
-          Мы ценим каждого клиента и предлагаем вам стать одним из них на
-          очень выгодных условиях. Каждому, кто закажет доставку питание на
-          неделю, будет предоставлена скидка в размере <span>20%!</span>
-          <br /><br />
-          Акция закончится 20 мая в 00:00
-        </div>
-      </div>
-      <div class="promotion__timer">
-        <div class="title">Осталось до конца акции:</div>
-        <div class="timer">
-          <div class="timer__block">
-            <span id="days">12</span>
-            дней
+        <div class="offer__slider">
+          <div class="offer__slider-counter">
+            <div class="offer__slider-prev">
+              <img src="icons/left.svg" alt="prev" />
+            </div>
+            <span id="current">03</span>
+            /
+            <span id="total">04</span>
+            <div class="offer__slider-next">
+              <img src="icons/right.svg" alt="next" />
+            </div>
           </div>
-          <div class="timer__block">
-            <span id="hours">20</span>
-            часов
-          </div>
-          <div class="timer__block">
-            <span id="minutes">56</span>
-            минут
-          </div>
-          <div class="timer__block">
-            <span id="seconds">20</span>
-            секунд
+          <div class="offer__slider-wrapper">
+            <div class="offer__slider-inner">
+              <div class="offer__slide">
+                <img src="img/slider/duhovyi.jpg" alt="Духовий" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/lego (2).jpg" alt="Лего" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/lego (3).jpg" alt="Лего" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/lego (4).jpg" alt="Лего" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/lego.jpg" alt="Лего" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/tanci.jpg" alt="Танцювальний" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/biser1.jpg" alt="Бісер" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/biser.jpg" alt="Бісер" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/nush.jpg" alt="НУШ" />
+              </div>
+              <div class="offer__slide">
+                <img src="img/slider/rozumnyky.jpg" alt="Розумники" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="social">
-        <div class="subtitle">Мы в социальных сетях:</div>
-        <a href="#" class="link">instagram</a>
-        <a href="#" class="link">facebook</a>
-      </div>
-      <div class="pepper">
-        <img src="icons/veg.svg" alt="pepper" />
-      </div>
-      <div class="call">
-        <div class="subtitle">Или позвоните нам</div>
-        <a href="#" class="link">+380678341034</a>
-        <a href="#" class="link">+380500941356</a>
+    <div class="divider"></div>
+
+    <div class="calculating">
+      <div class="container">
+        <h2 class="title">Рассчитаем вашу потребность в калориях?</h2>
+        <div class="calculating__field">
+          <div class="calculating__subtitle">
+            Ваш пол
+          </div>
+          <div class="calculating__choose" id="gender">
+            <div
+              id="female"
+              class="calculating__choose-item calculating__choose-item_active"
+            >
+              Женщина
+            </div>
+            <div id="male" class="calculating__choose-item">Мужчина</div>
+          </div>
+
+          <div class="calculating__subtitle">Ваша конституция</div>
+          <div class="calculating__choose calculating__choose_medium">
+            <input
+              type="text"
+              id="height"
+              placeholder="Введите рост"
+              class="calculating__choose-item"
+            />
+            <input
+              type="text"
+              id="weight"
+              placeholder="Введите вес"
+              class="calculating__choose-item"
+            />
+            <input
+              type="text"
+              id="age"
+              placeholder="Введите возраст"
+              class="calculating__choose-item"
+            />
+          </div>
+
+          <div class="calculating__subtitle">
+            Выберите вашу физическая активность
+          </div>
+          <div class="calculating__choose calculating__choose_big">
+            <div data-ratio="1.2" id="low" class="calculating__choose-item">
+              Низкая активность
+            </div>
+            <div
+              data-ratio="1.375"
+              id="small"
+              class="calculating__choose-item calculating__choose-item_active"
+            >
+              Невысокая активность
+            </div>
+            <div data-ratio="1.55" id="medium" class="calculating__choose-item">
+              Умеренная активность
+            </div>
+            <div data-ratio="1.725" id="high" class="calculating__choose-item">
+              Высокая активность
+            </div>
+          </div>
+
+          <div class="calculating__divider"></div>
+
+          <div class="calculating__total">
+            <div class="calculating__subtitle">
+              Ваша суточная норма калорий:
+            </div>
+            <div class="calculating__result"><span>2700</span> ккал</div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <div class="modal">
-    <div class="modal__dialog">
-      <div class="modal__content">
-        <form action="#">
-          <div class="modal__close" data-close>&times;</div>
-          <div class="modal__title">
-            Мы свяжемся с вами как можно быстрее!
-          </div>
-          <input required placeholder="Ваше имя" name="name" type="text" class="modal__input" />
-          <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input" />
-          <button class="btn btn_dark btn_min">Перезвонить мне</button>
+    <div class="divider"></div>
+
+    <div class="menu">
+      <h2 class="title">В школі працюють гуртки</h2>
+
+      <div class="menu__field">
+        <div class="container"></div>
+      </div>
+    </div>
+
+    <div class="order">
+      <div class="container">
+        <div class="title">Чекаємо на Вас прямо зараз!</div>
+        <form action="#" class="order__form">
+          <input
+            required
+            placeholder="Ваше ім 'я"
+            name="name"
+            type="text"
+            class="order__input"
+          />
+          <input
+            required
+            placeholder="Ваш номер телефону"
+            name="phone"
+            type="phone"
+            class="order__input"
+          />
+          <img src="icons/right.svg" alt="right" />
+          <button class="btn btn_dark btn_min">Зателефонуйте мені</button>
         </form>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
 
+    <div class="divider"></div>
+
+    <div class="promotion">
+      <div class="bgc_y"></div>
+      <div class="container">
+        <div class="promotion__text">
+          <div class="title">До уваги учнів та батьків!</div>
+          <div class="promotion__descr">
+            Мы ценим каждого клиента и предлагаем вам стать одним из них на
+            очень выгодных условиях. Каждому, кто закажет доставку питание на
+            неделю, будет предоставлена скидка в размере <span>20%!</span>
+            <br /><br />
+            Не відкладайте це до кінця літа.
+          </div>
+        </div>
+        <div class="promotion__timer">
+          <div class="title">До 1 вересня залишилося:</div>
+          <div class="timer">
+            <div class="timer__block">
+              <span id="days">12</span>
+              днів
+            </div>
+            <div class="timer__block">
+              <span id="hours">20</span>
+              годин
+            </div>
+            <div class="timer__block">
+              <span id="minutes">56</span>
+              хвилин
+            </div>
+            <div class="timer__block">
+              <span id="seconds">20</span>
+              секунд
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="social">
+          <div class="subtitle">Ми в соціальних мережах:</div>
+          <a href="https://www.instagram.com/palmira_school/" class="link"
+            >instagram</a
+          >
+          <a href="https://www.facebook.com/palmiraschool/" class="link"
+            >facebook</a
+          >
+        </div>
+        <div class="pepper">
+          <img src="icons/veg.svg" alt="pepper" />
+        </div>
+        <div class="call">
+          <div class="subtitle">Або зателефонуйте нам</div>
+          <a href="#" class="link">+380972501789</a>
+          <a href="#" class="link">+380972501789</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <form action="#">
+            <div class="modal__close" data-close>&times;</div>
+            <div class="modal__title">
+              Ми зателефонуємо Вам при першій нагоді!
+            </div>
+            <input
+              required
+              placeholder="Ваше ім'я"
+              name="name"
+              type="text"
+              class="modal__input"
+            />
+            <input
+              required
+              placeholder="Ваш номер телефону"
+              name="phone"
+              type="phone"
+              class="modal__input"
+            />
+            <button class="btn btn_dark btn_min">Зателефонуйте мені</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
 -->

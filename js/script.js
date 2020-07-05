@@ -127,17 +127,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const modalTimerId = setTimeout(openModal, 300000);
   // Изменил значение, чтобы не отвлекало
-
-  function showModalByScroll() {
-    if (
-      window.pageYOffset + document.documentElement.clientHeight >=
-      document.documentElement.scrollHeight
-    ) {
-      openModal();
-      window.removeEventListener("scroll", showModalByScroll);
-    }
-  }
-  window.addEventListener("scroll", showModalByScroll);
+  // код, що показує модальне вікно з пропозицією зателефонувати при досягненні кінця сторінки
+  // function showModalByScroll() {
+  //   if (
+  //     window.pageYOffset + document.documentElement.clientHeight >=
+  //     document.documentElement.scrollHeight
+  //   ) {
+  //     openModal();
+  //     window.removeEventListener("scroll", showModalByScroll);
+  //   }
+  // }
+  // window.addEventListener("scroll", showModalByScroll);
 
   // Используем классы для создание карточек меню
 
@@ -183,7 +183,13 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   getResource("http://localhost:3000/menu").then((data) => {
-    data.forEach(({ img, altimg, title, descr, price }) => {
+    data.forEach(({
+      img,
+      altimg,
+      title,
+      descr,
+      price
+    }) => {
       new MenuCard(
         img,
         altimg,
