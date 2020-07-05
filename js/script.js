@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Timer
 
-  const deadline = "2020-05-11";
+  const deadline = "2020-09-01";
 
   function getTimeRemaining(endtime) {
     const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -183,7 +183,13 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   getResource("http://localhost:3000/menu").then((data) => {
-    data.forEach(({ img, altimg, title, descr, price }) => {
+    data.forEach(({
+      img,
+      altimg,
+      title,
+      descr,
+      price
+    }) => {
       new MenuCard(
         img,
         altimg,
@@ -361,11 +367,16 @@ window.addEventListener("DOMContentLoaded", function () {
     dots.push(dot);
   }
 
+  //функція відкидання літер в значенні розміру слайда з "400px" зробити просто "400"
+  function deleteNoDigits(str) {
+    return +str.replace(/\D/g, '');
+  }
+
   next.addEventListener("click", () => {
-    if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
+    if (offset == deleteNoDigits(width) * (slides.length - 1)) {
       offset = 0;
     } else {
-      offset += +width.slice(0, width.length - 2);
+      offset += deleteNoDigits(width);
     }
 
     slidesField.style.transform = `translateX(-${offset}px)`;
@@ -388,9 +399,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
   prev.addEventListener("click", () => {
     if (offset == 0) {
-      offset = +width.slice(0, width.length - 2) * (slides.length - 1);
+      offset = deleteNoDigits(width) * (slides.length - 1);
     } else {
-      offset -= +width.slice(0, width.length - 2);
+      offset -= deleteNoDigits(width);
     }
 
     slidesField.style.transform = `translateX(-${offset}px)`;
@@ -416,7 +427,7 @@ window.addEventListener("DOMContentLoaded", function () {
       const slideTo = e.target.getAttribute("data-slide-to");
 
       slideIndex = slideTo;
-      offset = +width.slice(0, width.length - 2) * (slideTo - 1);
+      offset = deleteNoDigits(width) * (slideTo - 1);
 
       slidesField.style.transform = `translateX(-${offset}px)`;
 
