@@ -183,13 +183,7 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   getResource("http://localhost:3000/menu").then((data) => {
-    data.forEach(({
-      img,
-      altimg,
-      title,
-      descr,
-      price
-    }) => {
+    data.forEach(({ img, altimg, title, descr, price }) => {
       new MenuCard(
         img,
         altimg,
@@ -369,7 +363,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   //функція відкидання літер в значенні розміру слайда з "400px" зробити просто "400"
   function deleteNoDigits(str) {
-    return +str.replace(/\D/g, '');
+    return +str.replace(/\D/g, "");
   }
 
   next.addEventListener("click", () => {
@@ -441,4 +435,90 @@ window.addEventListener("DOMContentLoaded", function () {
       dots[slideIndex - 1].style.opacity = 1;
     });
   });
+
+  //Calculate
+  //".calculating__result span" - селектор(місце), куди буде прописуватися результат обчислень
+  const result = document.querySelector(".calculating__result span");
+  let sex = "female",
+    height,
+    weight,
+    age,
+    ratio = 1.375;
+
+  function calcTotal() {
+    //перевірка чи всі дані введено
+    if (!sex || !height || !weight || !age || !ratio) {
+      result.textContent = "____";
+      // переривання роботи функції
+      return;
+    }
+    if (sex === "female") {
+      //для женщин: BMR = 447.6 + (9.2 x вес, кг) + (3.1 х рост, cм) – (4.3 х возраст, лет)
+      result.textContent = Math.round(
+        (447.6 + 9.2 * weight + 3.1 * height - 4.3 * age) * ratio
+      );
+    } else {
+      //для мужчин: BMR = 88.36 + (13.4 x вес, кг) + (4.8 х рост, см) – (5.7 х возраст, лет)
+      result.textContent = Math.round(
+        (88.36 + 13.4 * weight + 4.8 * height - 5.7 * age) * ratio
+      );
+    }
+  }
+
+  calcTotal();
+
+  //функція отримання інформації зі статичних блоків на сторінці
+  function getStaticInformation(parentSelector, activeClass) {
+    const elements = document.querySelectorAll(`${parentSelector} div`);
+
+    elements.forEach((elem) => {
+      elem.addEventListener("click", (e) => {
+        if (e.target.getAttribute("data-ratio")) {
+          ratio = +e.target.getAttribute("data-ratio");
+        } else {
+          sex = e.target.getAttribute("id");
+        }
+
+        elements.forEach((elem) => {
+          elem.classList.remove(activeClass);
+        });
+
+        e.target.classList.add(activeClass);
+
+        calcTotal();
+      });
+    });
+  }
+
+  //двічі запускаємо функцію для отримання даних по статі та класу активності
+  getStaticInformation("#gender", "calculating__choose-item_active");
+  getStaticInformation(
+    ".calculating__choose_big",
+    "calculating__choose-item_active"
+  );
+
+  //функція отримання росту, ваги, віку
+  function getDynamicInformation(selector) {
+    const input = document.querySelector(selector);
+
+    input.addEventListener("input", () => {
+      switch (input.getAttribute("id")) {
+        case "height":
+          height = +input.value;
+          break;
+        case "weight":
+          weight = +input.value;
+          break;
+        case "age":
+          age = +input.value;
+          break;
+      }
+
+      calcTotal();
+    });
+  }
+
+  getDynamicInformation("#height");
+  getDynamicInformation("#weight");
+  getDynamicInformation("#age");
 });
