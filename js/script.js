@@ -439,11 +439,44 @@ window.addEventListener("DOMContentLoaded", function () {
   //Calculate
   //".calculating__result span" - селектор(місце), куди буде прописуватися результат обчислень
   const result = document.querySelector(".calculating__result span");
-  let sex = "female",
-    height,
-    weight,
-    age,
+
+  let sex, height, weight, age, ratio;
+
+  if (localStorage.getItem("sex")) {
+    sex = localStorage.getItem("sex");
+  } else {
+    sex = "female";
+    localStorage.setItem("sex", "female");
+  }
+
+  if (localStorage.getItem("ratio")) {
+    ratio = localStorage.getItem("ratio");
+  } else {
     ratio = 1.375;
+    localStorage.setItem("ratio", 1.375);
+  }
+  //функція, яка превіряє стать та активність з localStorage та встановлює колір кнопок відповідним даним
+  function initLocalSettings(selector, activeClass) {
+    const elements = document.querySelectorAll(selector);
+
+    elements.forEach((elem) => {
+      //видалення всіх активних кнопок
+      elem.classList.remove(activeClass);
+      //призначення класу активності кнопці, яка має в localStorage записане значення статі
+      if (elem.getAttribute("id") === localStorage.getItem("sex")) {
+        elem.classList.add(activeClass);
+      }
+      //призначення класу активності кнопці, яка має в localStorage записане значення активності
+      if (elem.getAttribute("data-ratio") === localStorage.getItem("ratio")) {
+        elem.classList.add(activeClass);
+      }
+    });
+  }
+  initLocalSettings("#gender  div", "calculating__choose-item_active");
+  initLocalSettings(
+    ".calculating__choose_big  div",
+    "calculating__choose-item_active"
+  );
 
   function calcTotal() {
     //перевірка чи всі дані введено
@@ -468,15 +501,19 @@ window.addEventListener("DOMContentLoaded", function () {
   calcTotal();
 
   //функція отримання інформації зі статичних блоків на сторінці
-  function getStaticInformation(parentSelector, activeClass) {
-    const elements = document.querySelectorAll(`${parentSelector} div`);
+  function getStaticInformation(selector, activeClass) {
+    const elements = document.querySelectorAll(selector);
 
     elements.forEach((elem) => {
       elem.addEventListener("click", (e) => {
         if (e.target.getAttribute("data-ratio")) {
           ratio = +e.target.getAttribute("data-ratio");
+          //зберігаємо в localStorage обрану активність
+          localStorage.setItem("ratio", +e.target.getAttribute("data-ratio"));
         } else {
           sex = e.target.getAttribute("id");
+          //зберігаємо в localStorage обрану стать
+          localStorage.setItem("sex", e.target.getAttribute("id"));
         }
 
         elements.forEach((elem) => {
@@ -491,9 +528,9 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   //двічі запускаємо функцію для отримання даних по статі та класу активності
-  getStaticInformation("#gender", "calculating__choose-item_active");
+  getStaticInformation("#gender div", "calculating__choose-item_active");
   getStaticInformation(
-    ".calculating__choose_big",
+    ".calculating__choose_big div",
     "calculating__choose-item_active"
   );
 
@@ -502,6 +539,14 @@ window.addEventListener("DOMContentLoaded", function () {
     const input = document.querySelector(selector);
 
     input.addEventListener("input", () => {
+      //перевірка чи не ввів користувач некоректні дані з підсвіткою поля введення
+      if (input.value.match(/\D/g)) {
+        input.style.border = "1px solid red";
+      } else {
+        input.style.border = "none";
+      }
+
+      //switch, який витягує те значення яке ввів користувач в якесь поле і призначає цю величину відповідному значенню
       switch (input.getAttribute("id")) {
         case "height":
           height = +input.value;
